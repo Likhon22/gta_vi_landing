@@ -28,7 +28,7 @@ const Hero = () => {
     });
     tl.to(".fade-out", { opacity: 0, ease: "power1.inOut" })
       .to(".scale-out", { scale: 1, ease: "power1.inOut" })
-      .to(".mask-wrapper", { maskSize: 80, ease: "power1.inOut" }, "<")
+      .to(".mask-wrapper", { maskSize: maskSize, ease: "power1.inOut" }, "<")
       .to(".mask-wrapper", {
         opacity: 0,
       })
