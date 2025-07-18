@@ -4,13 +4,13 @@ import { useRef } from "react";
 
 const SecondVideo = () => {
   useGSAP(() => {
-    gsap.set(".second-vd-wrapper", {
-      marginTop: "-150vh",
+    gsap.set(".lucia", {
+      marginTop: "-60vh",
       opacity: 0,
     });
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: ".second-vd-wrapper",
+        trigger: ".lucia",
         start: "top top",
         end: "+=200%",
         scrub: true,
@@ -21,7 +21,7 @@ const SecondVideo = () => {
       opacity: 0,
       ease: "power1.inOut",
     }).to(
-      ".second-vd-wrapper",
+      ".lucia",
       {
         opacity: 1,
         duration: 1,
@@ -29,18 +29,19 @@ const SecondVideo = () => {
       },
       "<"
     );
-    videoRef.current.onloadedmetadata = () => {
+    (videoRef.current.onloadedmetadata = () => {
       tl.to(videoRef.current, {
         currentTime: videoRef.current.duration,
         duration: 3,
         ease: "power1.inOut",
       });
-    };
+    }),
+      "<";
   });
 
   const videoRef = useRef(null);
   return (
-    <section className="second-vd-wrapper">
+    <section className="lucia">
       <div className="h-dvh">
         <video
           ref={videoRef}
@@ -48,7 +49,8 @@ const SecondVideo = () => {
           playsInline
           preload="auto"
           src="/videos/output2.mp4"
-          className="second-vd"
+          className="second-vd size-full object-cover"
+          style={{ objectPosition: "30% 0%" }}
         />
       </div>
     </section>
