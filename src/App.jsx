@@ -6,6 +6,10 @@ import FirstVideo from "./sections/FirstVideo";
 import Jason from "./sections/Jason";
 import SecondVideo from "./sections/SecondVideo";
 import Lucia from "./sections/Lucia";
+import PostCard from "./sections/PostCard";
+import Final from "./sections/Final";
+import FinalText from "./sections/Outro";
+import Outro from "./sections/Outro";
 gsap.registerPlugin(ScrollTrigger);
 const App = () => {
   return (
@@ -16,6 +20,9 @@ const App = () => {
       <Jason />
       <SecondVideo />
       <Lucia />
+      <PostCard />
+      <Final />
+      <Outro />
     </main>
   );
 };
